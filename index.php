@@ -1,5 +1,6 @@
 <?php
 
+$greeting = "Hello";
 $name = "Fred";
 
-echo 'Hello ' . $name;
+echo "{$greeting}, {$name}";
