@@ -12,14 +12,7 @@
 </head>
 <body>
 	<header>
-		<h1>
-			<?php 
-				$name = $_GET['name'];
-
-				echo "Hello, {$name}"; 
-
-			?>
-		</h1>
+		<h1><?php echo "Hello, " . $_GET['name']; ?> </h1>
 	</header>
 </body>
 </html>
