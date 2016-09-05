@@ -1,2 +1,2 @@
 # the-php-practitioner
-Study Files from Laracasts The PHP Practitioner
+Study Files from my PHP studies.
