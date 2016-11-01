@@ -1,0 +1,5 @@
+/* install composer.json */
+composer install
+
+/* */
+composer dump-autoload
