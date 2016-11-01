@@ -14,9 +14,9 @@ class UserDAO implements IUserDAO
 	
 	private $connection;
 
-	function __construct(DBConnection $connection)
+	function __construct(DBConnection $conn)
 	{
-		$this->connection = $connection->getConnection();
+		$this->connection = $conn->connect();
 	}
 
 

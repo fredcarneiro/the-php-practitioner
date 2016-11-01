@@ -1,7 +1,7 @@
 <?php
 namespace Carneiro\Login;
 
-Use Carneiro\DB\DBConnection;
+Use Carneiro\DB\MySQL;
 Use Carneiro\DAO\UserDAO;
 Use Carneiro\Session\SessionController;
 
@@ -17,8 +17,7 @@ class Login
 
 	function __construct($email, $password)
 	{
-		$connection = new DBConnection();
-		$userDAO = new UserDAO($connection);
+		$userDAO = new UserDAO(new MySQL());
 		$this->sessionController = new SessionController(); 
 		$this->userDAO = $userDAO;
 
@@ -30,7 +29,7 @@ class Login
 	{
 		
 		$user = $this->userDAO->searchByEmailPassword($email, $password);
-		
+
 		if ($this->sessionController->createSession($user)) {
 			$this->isLogged = true;
 		}

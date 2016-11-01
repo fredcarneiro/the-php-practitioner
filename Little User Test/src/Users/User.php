@@ -7,12 +7,23 @@ namespace Carneiro\Users;
 */
 class User
 {
-	
+
 	private $name;
 	private $email;
 	private $password;
 	private $country;
 	private $timezone;
+	
+	function __construct($name = '', $password = '', $country = '', $timezone = '', $email = '')
+	{
+
+		$this->setName($name);
+		$this->setPassword($password);
+		$this->setCountry($country);
+		$this->setTimezone($timezone);
+		$this->setEmail($email);
+
+	}
 
 
 	public function setName($name)
