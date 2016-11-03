@@ -5,13 +5,12 @@
 */
 require_once 'vendor/autoload.php';
 
-Use Carneiro\DB\DBConnection;
+Use Carneiro\DB\MySQL;
+Use Carneiro\Setup\Setup;
 
-$c = new DBConnection();
+$result = new Setup(new MySQL());
 
-$result = $c->createDatabase();
-
-if ($result) {
+if ($result->createDatabase()) {
 	echo "<pre> User table created. </pre>";
 	echo "<a href='index.asp'>Back to Index</a>";
 }else{

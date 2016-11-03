@@ -2,12 +2,21 @@
 
 namespace Carneiro\Setup;
 
+Use Carneiro\DB\DBConnection;
+
 /**
 * 
 */
 class Setup 
 {
 	
+	private $connection;
+	
+	function __construct(DBConnection $conn)
+	{
+		$this->connection = $conn->connect();
+	}
+
 	public function createDatabase()
 	{
 		
